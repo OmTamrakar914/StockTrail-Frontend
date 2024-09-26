@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.nav-link{
+  margin-left: 40px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: rgba(50, 47, 44, 0.63);
+  
+}
+footer ul{
+  list-style-type: none;
+}
+footer .nav-head{
+  text-decoration: none;
+  font-size: larger;
+  color: rgba(101, 94, 85, 0.932);
+  margin-bottom: 10px;
+}
+
+footer .footer-graveyard-links ul li {
+  display: inline;
+  font-size: .8rem;
+  margin-right: 20px;
+  text-decoration: none;}
