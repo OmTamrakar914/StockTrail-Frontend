@@ -1,37 +1,49 @@
-import React from 'react';
+import React from "react";
 
 function Team() {
-    return ( 
-     <div className="container p-5">
-        <div className="row pb-5 border-top">
-          <h1 className="fs-1 text-center text-muted mt-5 pt-5">
-            People
-          </h1>
+  return (
+    <div className="container">
+      <div className="row p-3 mt-5 border-top">
+        <h1 className="text-center">People</h1>
+      </div>
+
+      <div
+        className="row p-3 text-muted"
+        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
+      >
+        <div className="col-6 p-3 text-center">
+          <img
+            src="media/images/aboutImagejpg.jpg"
+            alt="Om Tamrakar"
+            style={{ borderRadius: "100%", width: "50%" }}
+          />
+          <h4 className="mt-5">Om Tamrakar</h4>
+          <h6>Developer</h6>
         </div>
-        <div className="row p-5   p-3 fs-6 text-muted  " style={{lineHeight: "1.8", fontSize:"1.em"}} >
-          <div className="col-6 ">
-            <img src="media/images/nithinKamath.jpg" className='text-center' style={{borderRadius:"100%", width:"70%"}} alt=""/>
-            <h3 className='text-center mt-5 position-relative' style={{lineHeight: "1", fontSize:"1.em" , right:"70px"}}>Nithin Kamath</h3>
-            <h4 className='text-center position-relative' style={{lineHeight: "1", fontSize:"1.em" , right:"70px"}}>Founder, CEO</h4>
-          
-          </div>
-          <div className="col-6 text-center p-5">
-            <p>
-            Nithin bootstrapped and founded StockTrail in 2010 to overcome the hurdles he faced during his decade long stint as a trader. Today, StockTrail has changed the landscape of the Indian broking industry.
-            </p>
-            <p>
-            He is a member of the SEBI Secondary Market Advisory Committee (SMAC) and the Market Data Advisory Committee (MDAC).
-            </p>
-            <p>
-            Playing basketball is his zen.
-            </p>
-            <p>
-            Connect on <a href="" style= {{textDecoration: "none"}} >Homepage</a>  /<a href="" style= {{textDecoration: "none"}} >TradingQnA</a>  /<a href="" style= {{textDecoration: "none"}} >Twitter</a> 
-            </p>
-          </div>
+        <div className="col-6 p-3">
+          <p>
+            Om is a tech enthusiast passionate about web development, AI, 
+            and financial technology. He developed StockTrail to combine his 
+            interests in finance and technology, creating an engaging way to 
+            learn stock trading concepts hands-on.
+          </p>
+          <p>
+            StockTrail is a result of his commitment to making financial literacy 
+            more accessible, providing students and traders with an interactive 
+            and risk-free environment** to explore stock markets.
+          </p>
+          <p>
+            When he's not coding, you can find him playing chess, leading hackathons, 
+            or building innovative tech projects.
+          </p>
+          <p>
+            Connect on <a href="">GitHub</a> / <a href="">LinkedIn</a> /{" "}
+            <a href="">Twitter</a>
+          </p>
         </div>
       </div>
-     );
+    </div>
+  );
 }
 
-export default Team;   
+export default Team;

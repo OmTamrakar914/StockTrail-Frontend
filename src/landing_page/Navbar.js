@@ -13,8 +13,8 @@ function Navbar() {
             style={{ width: "5%", left: "10%", top: "-5px" }}
           />
           <h4
-            className=" d-inline-block position-relative fs-4"
-            style={{ left: "11%",color: "#005ce6" }}
+            className=" d-inline-block position-relative fs-4 btn-primary "
+            style={{ left: "11%",color: "#004ffa" }}
           >
             STOCKTRAIL
           </h4>
@@ -30,10 +30,10 @@ function Navbar() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="  collapse navbar-collapse " id="navbarSupportedContent">
          
           <form class="d-flex" role="search">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
               <Link class="nav-link active" aria-current="page" to="/signup">
                Signup

@@ -2,52 +2,53 @@ import React from "react";
 
 function Hero() {
   return (
-    
-      <div className="container p-5 mt-5 ">
-        <div className="row pb-5">
-          <h1 className="fs-2 text-center text-muted ">
-            We pioneered the discount broking model in India.<br></br>
-            Now, we are breaking ground with our technology.
-          </h1>
+    <div className="container">
+      <div className="row p-5 mt-5 mb-5">
+        <h1 className="fs-2 text-center">
+          Redefining stock market learning  
+          <br />
+          with innovation and technology.
+        </h1>
+      </div>
+
+      <div
+        className="row p-5 mt-5 border-top text-muted"
+        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
+      >
+        <div className="col-6 p-5">
+          <p>
+            StockTrail is an educational project designed to help students, 
+            aspiring traders, and finance enthusiasts understand stock trading, 
+            investments, and market analysis in a risk-free environment.
+          </p>
+          <p>
+            Our platform offers simulated trading, allowing users to place 
+            virtual trades, explore market trends, and analyze financial data — 
+            all without real financial risks.
+          </p>
+          <p>
+            StockTrail is built using cutting-edge web technologies to provide a 
+            seamless and intuitive trading experience, making financial literacy 
+            more accessible and engaging.
+          </p>
         </div>
-        <div className="row p-5 mt-5 border-top p-5 fs-6 text-muted  " style={{lineHeight: "1.8", fontSize:"1.em"}} >
-          <div className="col-6 p-5">
-            <p>
-              We kick-started operations on the 15th of August, 2010 with the
-              goal of breaking all barriers that traders and investors face in
-              India in terms of cost, support, and technology. We named the
-              company Zerodha, a combination of Zero and "Rodha", the Sanskrit
-              word for barrier.
-            </p>
-            <p>
-              Today, our disruptive pricing models and in-house technology have
-              made us the biggest stock broker in India.
-            </p>
-            <p>
-              Over 1+ Crore clients place millions of orders every day through
-              our powerful ecosystem of investment platforms, contributing over
-              15% of all Indian retail trading volumes.
-            </p>
-          </div>
-          <div className="col-6 text-center p-5">
-            <p>
-              In addition, we run a number of popular open online educational
-              and community initiatives to empower retail traders and investors.
-            </p>
-            <p>
-              <a href="" style= {{textDecoration: "none"}} >Rainmatter</a>, our fintech fund and incubator, has invested in
-              several fintech startups with the goal of growing the Indian
-              capital markets.
-            </p>
-            <p>
-              And yet, we are always up to something new every day. Catch up on
-              the latest updates on our blog or see what the media is saying
-              about us.
-            </p>
-          </div>
+        <div className="col-6 p-5">
+          <p>
+            We believe that financial education should be interactive and practical. 
+            That’s why we focus on **market insights, real-time learning, and easy-to-use tools.
+          </p>
+          <p>
+            StockTrail is more than just a project—it's an initiative to bridge the 
+            gap between financial knowledge and real-world market experiences.
+          </p>
+          <p>
+            And yet, we are always improving and innovating. Stay updated with our 
+            latest developments, insights, and features as we continue to enhance 
+            the learning experience.
+          </p>
         </div>
       </div>
-    
+    </div>
   );
 }
 

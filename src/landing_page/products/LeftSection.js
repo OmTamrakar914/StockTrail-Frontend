@@ -1,28 +1,37 @@
 import React from 'react';
 
-function LeftSection() {
+function LeftSection({imageURL, productName, productDescription,tryDemo, learnMore, googlePlay, appStore}) {
     return ( 
-        <div className='container mt-5 p-5 pt-5 border-top'>
-            <div className='ror p-5 d-flex gap-5'>
+        
+        <div className='container  p-4   '>
+            <div className='row p-5 d-flex gap-5'>
                 <div className='col pl-5 position-relative' style={{left:"60px"}} >
-                    <img src="media/images/kite.png" alt="" style={{width:"100%"}} />
+                    {/* <img src="media/images/kite.png" alt="" style={{width:"100%"}} /> */}
+                    <img src={imageURL} alt="" style={{width:"100%"}} />
+
                 </div>
-                <div className='col pt-5 p-5 position-relative' style={{left:"60px"}}>
-                    <h1 className='lh-lg' >Kite</h1>
-                    <p>Our ultra-fast flagship trading platform with</p>
-                    <p>streaming market data, advanced charts, an</p>
-                    <p>elegant UI, and more. Enjoy the Kite</p>
-                    <p>experience seamlessly on your Android and iOS devices.</p>
+                <div className='col pt-2 p-5 position-relative' style={{left:"60px"}}>
+                    <h1 className='lh-lg' >{productName}</h1>
+                    <p>{productDescription}</p>
+
                     <div className=''>
                         
                     </div>
-                    <p cl><a  c href=''  style ={{textDecoration: "none"}} >Try demo  <i class="fa-solid fa-arrow-right-long"></i></a> <span class="tab-space"> </span><a c href='' className='position-relative' style ={{textDecoration: "none", left:"100px"}} >
-                    Learn more  <i class="fa-solid fa-arrow-right-long"></i></a></p>
-                    <img src="media/images/googlePlayBadge.svg" alt=""/>
+                    
+                    <div>
+                    <a href={tryDemo} style ={{textDecoration: "none"}} className=''>Try Demo</a>
+                    <a href={learnMore} style={{marginLeft: "50px",textDecoration: "none"}} >Learn More</a>
+                    </div >
+                    <div className='mt-3'>
+                        
+                    {/* <a href={googlePlay} style={{marginLeft: "0px"}}><img src="media/images/googlePlayBadge.svg" alt=""/></a>
+                    <a href={appStore} style={{marginLeft: "20px"}}><img src="media/images/appstoreBadge.svg" alt=""/></a> */}
+                    </div>
                 </div>
             </div>
             
         </div>
+     
      );
 }
 
