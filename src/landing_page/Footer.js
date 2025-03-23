@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,38 +19,38 @@ function Footer() {
 
           <div className="col-3">
             <ul className="list-style">
-              <a href="#" className="nav-head">Company</a>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Referral Program</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press & Media</a></li>
+            <Link class="nav-link active" to="/product" className="nav-head">Company</Link>
+              <li><Link class="nav-link active" to="/about">About</Link></li>
+              <li><Link class="nav-link active" to="/product">Product</Link></li>
+              <li><Link class="nav-link active" to="/pricing">Pricing</Link></li>
+              <li><Link class="nav-link active" to="/support">Referral Program</Link></li>
+              <li><Link class="nav-link active" to="/support">Careers</Link></li>
+              <li><Link class="nav-link active" to="/support">Press & Media</Link></li>
             </ul>
           </div>
 
           <div className="col-3">
             <ul className="list-style">
-              <a href="#" className="nav-head">Support</a>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Support Portal</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Downloads & Resources</a></li>
+            <Link class="nav-link active" className="nav-head" to="/support">Support</Link>
+              <li> <Link class="nav-link active" to="/support">Contact Us</Link></li>
+              <li><Link class="nav-link active" to="/support">Support Portal</Link></li>
+              <li><Link class="nav-link active" to="/support">FAQ</Link></li>
+              <li><Link class="nav-link active" to="/support">Download and resources</Link></li>
             </ul>
           </div>
 
           <div className="col-3">
             <ul className="list-style">
-              <a href="#" className="nav-head">Account</a>
-              <li><a href="#">Open an Account</a></li>
-              <li><a href="#">Fund Transfer</a></li>
+            <Link class="nav-link active" className="nav-head" to="/signup">Account</Link>
+              <li> <Link class="nav-link active" to="/signup">Open a account</Link></li>
+              <li><Link class="nav-link active" to="/support">Fund Transfer</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="row mt-5 fs-6 text-small text-muted">
           <p>
-            This website is for **educational purposes only**. StockTrail does not provide real financial services. 
+            This website is for educational purposes only. StockTrail does not provide real financial services. 
             The information presented is fictional and should not be considered financial advice.
           </p>
         </div>
@@ -59,8 +60,8 @@ function Footer() {
             <li><a href="https://nseindia.com">NSE</a></li>
             <li><a href="https://www.bseindia.com/">BSE</a></li>
             <li><a href="https://www.mcxindia.com/">MCX</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><Link class="nav-link active" to="/support">Terms & Conditions</Link></li>
+            <li><Link class="nav-link active" to="/support">Privacy Policy</Link></li>
           </ul>
           <p className="text-muted small">The external links provided are for reference only and do not imply any affiliation.</p>
         </div>

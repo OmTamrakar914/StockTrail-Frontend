@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Hero() {
     return ( 
-        <div className='container p-5 mb-5'>
-            <div className='row text-center'>
+        <div className='container p-5 mb-5 ' style={{ backgroundColor: "#f5f5f5",  borderRadius: "03%", 
+            boxShadow: "10px 10px 100px rgba(68, 214, 224, 0.8)" }}>
+            <div className='row text-center '>
                 <img src="media/images/homeHero.png" alt="image" className='mb-5'/>
 
                 <h1 className='mt-5 pb-1'>Invest in everything</h1>

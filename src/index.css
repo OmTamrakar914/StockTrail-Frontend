@@ -23,6 +23,7 @@ footer ul{
   list-style-type: none;
 }
 footer .nav-head{
+  margin-left: 2.5rem;
   text-decoration: none;
   font-size: larger;
   color: rgba(101, 94, 85, 0.932);

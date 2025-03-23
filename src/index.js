@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";  
+import "bootstrap/dist/js/bootstrap.bundle.min.js";  
+
 
 import HomePage from "./landing_page/home/HomePage";
 import Signup from "./landing_page/signup/Signup";
@@ -18,7 +21,7 @@ import Login from "./landing_page/loginPage/Login";
 const RedirectToExternal = ({ url }) => {
   useEffect(() => {
     window.location.href = url; // Redirect to external URL
-  }, []);
+  }, [url]);
   return null;
 };
 
@@ -39,9 +42,9 @@ root.render(
         <Route path="/login" element={<Login />} />
 
         {/* Redirect Dashboard-Related Routes to the Dashboard Project */}
-        <Route path="/dashboard/*" element={<RedirectToExternal url="http://localhost:3003/" />} />
-        <Route path="/orders/*" element={<RedirectToExternal url="http://localhost:3003/orders" />} />
-        <Route path="/holdings/*" element={<RedirectToExternal url="http://localhost:3003/holdings" />} />
+        <Route path="/dashboard/*" element={<RedirectToExternal url="http://localhost:3000/" />} />
+        <Route path="/orders/*" element={<RedirectToExternal url="http://localhost:3000/orders" />} />
+        <Route path="/holdings/*" element={<RedirectToExternal url="http://localhost:3000/holdings" />} />
 
         {/* 404 Not Found */}
         <Route path="*" element={<NotFound />} />

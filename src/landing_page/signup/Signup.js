@@ -10,6 +10,7 @@ function Signup() {
   });
 
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // ✅ Loading state
   const navigate = useNavigate(); // For redirecting user
 
   // Handle Input Change
@@ -20,10 +21,26 @@ function Signup() {
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // ✅ Prevent API call if fields are empty
+    if (!formData.fullName || !formData.email || !formData.password || !formData.confirmPassword) {
+      setError("All fields are required!");
+      return;
+    }
+
+    // ✅ Validate password length
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    // ✅ Validate password match
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
+
+    setLoading(true); // Show loading state
 
     try {
       const response = await fetch("http://localhost:3002/api/auth/signup", {
@@ -34,23 +51,33 @@ function Signup() {
           email: formData.email,
           password: formData.password,
         }),
+        credentials: "include", // ✅ Allows backend to set authentication cookies
       });
 
       const data = await response.json();
+      setLoading(false); // Hide loading state
 
       if (!response.ok) {
-        setError(data.message || "Signup failed!");
+        setError(data.error || "Signup failed!");
         return;
       }
 
-      // Store token in localStorage
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("username", formData.fullName.split(" ")[0]); // Save first name as username
+      if (!data.user || !data.user.username) {
+        throw new Error("Error: `user.username` is missing in API response.");
+      }
+
+      // ✅ Store username & token in session storage (For UI & API authentication)
+      sessionStorage.setItem("username", data.user.username);
+      sessionStorage.setItem("token", data.token);
+
+      console.log("Stored Username:", sessionStorage.getItem("username"));
+      console.log("Stored Token:", sessionStorage.getItem("token"));
 
       // Redirect to dashboard
       navigate("/dashboard");
     } catch (error) {
       setError("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -129,13 +156,16 @@ function Signup() {
 
             {error && <p className="text-danger fw-bold">{error}</p>}
 
-            <button type="submit" className="btn btn-primary w-100">
-              Sign Up
+            <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+              {loading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
 
           <p className="mt-3 text-center">
-            Already have an account? <Link to="/login" className="text-decoration-none text-primary">Login here</Link>
+            Already have an account?{" "}
+            <Link to="/login" className="text-decoration-none text-primary">
+              Login here
+            </Link>
           </p>
         </div>
       </div>

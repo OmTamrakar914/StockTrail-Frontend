@@ -21,6 +21,8 @@ function Login() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("🚀 Form Submit Triggered!"); // Debugging Step 1
+
     setError("");
     setLoading(true);
 
@@ -31,23 +33,33 @@ function Login() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+        credentials: "include", // ✅ Allow backend to set authentication cookies
       });
 
+      console.log("🟡 Fetch request sent!");
+
       const data = await response.json();
+      console.log("🔹 Login API Response:", data); // Debugging
+
       setLoading(false);
 
       if (!response.ok) {
         throw new Error(data.message || "Login failed!");
       }
 
-      // Store token & username in localStorage
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("username", data.user.fullName.split(" ")[0]);
+      if (!data.user || !data.user.username) {
+        throw new Error("Error: `user.username` is missing in API response.");
+      }
+
+      // ✅ Store username in session storage (Optional: For UI display)
+      sessionStorage.setItem("username", data.user.username);
+
+      console.log("Stored Username:", sessionStorage.getItem("username"));
 
       // Redirect to dashboard
       navigate("/dashboard");
-
     } catch (err) {
+      console.error("❌ Login Error:", err.message);
       setError(err.message);
       setLoading(false);
     }
@@ -56,7 +68,7 @@ function Login() {
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="row shadow-lg p-4 rounded" style={{ maxWidth: "900px", width: "100%" }}>
-        
+
         {/* Left Side - Login Form */}
         <div className="col-md-6 d-flex flex-column justify-content-center p-4">
           <h2 className="text-center mb-4 fw-semibold">
